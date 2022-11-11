@@ -9,7 +9,7 @@ let cardsEl = document.getElementById("cards-el")
 
 function getRandomCard() {
 
-     let randomNumber = Math.floor(Math.random * 13) + 1
+     let randomNumber = Math.floor(Math.random() * 13) + 1
      if (randomNumber > 10) {
         return 10
      }else if (randomNumber === 1) {
@@ -29,7 +29,7 @@ sum = firstCard + secondCard
 }
 
 function renderGame() {
-    cardsEl.textContent = "Cards: " + cards[0] + " " + cards[1]
+    cardsEl.textContent = "Cards: " 
 for(let i = 0; i < cards.length; i++) {
     cardsEl.textContent += cards[i] + " "
 }
@@ -47,10 +47,13 @@ messageEl.textContent= message
 }
 
 function newCard() {
+    if(isAlive === true && hasBlackJack === false) {
+
+    
     let card = getRandomCard()
     sum += card
     cards.push(card)
-    console.log(card)
+    
     renderGame()
+    }
 }
-
